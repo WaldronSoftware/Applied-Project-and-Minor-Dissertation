@@ -1,0 +1,12 @@
+.button-spacing {
+    display: flex;
+  justify-content: space-between;
+  width: 100%;
+  }
+
+  ion-button {
+    flex: 1;
+    margin: 0 700px; /* Adjust the margin to control spacing between buttons */
+  }
+  
+  
