@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SharedToolbarComponent } from './shared-toolbar.component';
+import { InstantMessageComponent } from './instant-message.component';
 
-describe('SharedToolbarComponent', () => {
-  let component: SharedToolbarComponent;
-  let fixture: ComponentFixture<SharedToolbarComponent>;
+describe('InstantMessageComponent', () => {
+  let component: InstantMessageComponent;
+  let fixture: ComponentFixture<InstantMessageComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SharedToolbarComponent ],
+      declarations: [ InstantMessageComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SharedToolbarComponent);
+    fixture = TestBed.createComponent(InstantMessageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
