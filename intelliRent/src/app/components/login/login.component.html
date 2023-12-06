@@ -1,3 +1,17 @@
-<p>
-  login works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Your login/signup form and content -->
+
+  <ion-button expand="full" (click)="login()">Login</ion-button>
+  <ion-button expand="full" (click)="signup()">Signup</ion-button>
+</ion-content>

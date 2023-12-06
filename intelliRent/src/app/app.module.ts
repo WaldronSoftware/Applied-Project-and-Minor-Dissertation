@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 //Component Imports
 import { LoginComponent } from './components/login/login.component';
+
+//Pages
 import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({

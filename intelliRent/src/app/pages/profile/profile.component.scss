@@ -1,0 +1,26 @@
+ion-col {
+    //border: solid 1px #fff;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .profile-grid
+  {
+    padding-top: 50px;
+  }
+
+  .profile-col
+  {
+    height: 110px;
+    display: flex;
+    border: solid 1px #fff;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .profile-oval {
+    width: 90px; 
+    height: 100px; 
+    background-color: #e74c3c; 
+    border-radius: 50%; 
+  }

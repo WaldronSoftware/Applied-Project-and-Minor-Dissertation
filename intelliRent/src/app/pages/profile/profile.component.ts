@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { LoginComponent } from 'src/app/components/login/login.component';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-profile',
@@ -9,18 +8,11 @@ import { LoginComponent } from 'src/app/components/login/login.component';
 })
 export class ProfileComponent  implements OnInit {
 
-  isLoggedIn: boolean = false; //Set off auth status
 
-  constructor(public modalController: ModalController) { }
+  constructor() {}
 
   ngOnInit() {}
 
-  async presentLoginModal() {
-    const modal = await this.modalController.create({
-      component: LoginComponent,
-      cssClass: 'login-modal-class', // Customize this in your global styles
-    });
-    return await modal.present();
-  }
-
+  
+  
 }
