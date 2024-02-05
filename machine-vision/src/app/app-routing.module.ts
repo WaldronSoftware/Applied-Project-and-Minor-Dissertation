@@ -8,8 +8,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'imgrecognition',
     pathMatch: 'full'
+  },
+  {
+    path: 'imgrecognition',
+    loadChildren: () => import('./pages/imgrecognition/imgrecognition.module').then( m => m.ImgrecognitionPageModule)
   },
 ];
 

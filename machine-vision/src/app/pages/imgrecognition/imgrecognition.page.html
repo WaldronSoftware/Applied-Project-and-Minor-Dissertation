@@ -1,0 +1,11 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>imgrecognition</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <input type="file" (change)="uploadImage($event)" accept="image/*" />
+  <img [src]="imageUrl" *ngIf="imageUrl">
+  <ion-label *ngIf="prediction">{{ prediction }}</ion-label>
+</ion-content>
