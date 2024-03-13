@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'splash',
+    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
+  },
+  {
+    path: 'nav-bar',
+    loadChildren: () => import('./pages/nav-bar/nav-bar.module').then( m => m.NavBarPageModule)
+  },
 ];
 
 @NgModule({
