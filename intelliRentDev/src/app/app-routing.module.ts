@@ -24,6 +24,14 @@ const routes: Routes = [
     path: 'nav-bar',
     loadChildren: () => import('./pages/nav-bar/nav-bar.module').then( m => m.NavBarPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/auth/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/auth/register/register.module').then( m => m.RegisterPageModule)
+  },
 ];
 
 @NgModule({
