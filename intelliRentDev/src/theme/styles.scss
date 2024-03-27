@@ -4,14 +4,179 @@
 
 //Regular
 
+.whiteColor12Regular {
+  color: var(--whiteColor);
+  font-size: 12px;
+}
+
+.whiteColor14Regular {
+  color: var(--whiteColor);
+  font-size: 14px;
+}
+
+.blackColor12Regular {
+  color: var(--blackColor);
+  font-size: 12px;
+}
+
+.blackColor14Regular {
+  color: var(--blackColor);
+  font-size: 14px;
+}
+
+.grayColor12Regular {
+  color: var(--grayColor);
+  font-size: 12px;
+}
+
+.grayColor14Regular {
+  color: var(--grayColor);
+  font-size: 14px;
+}
+
+
 //Medium
+
+.whiteColor14Medium {
+  color: var(--whiteColor);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.whiteColor15Medium {
+  color: var(--whiteColor);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.whiteColor16Medium {
+  color: var(--whiteColor);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.whiteColor18Medium {
+  color: var(--whiteColor);
+  font-size: 18px;
+  font-weight: 500;
+}
 
 .whiteColor36Medium{
   color: var(--whiteColor);
   font-size: 36px;
   font-weight: 500;
 }
+
+.blackColor14Medium {
+  color: var(--blackColor);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.primaryColor16Medium {
+  color: var(--primaryColor);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.grayColor12Medium {
+  color: var(--grayColor);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.grayColor14Medium {
+  color: var(--grayColor);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.redColor14Medium {
+  color: var(--redColor);
+  font-size: 14px;
+  font-weight: 500;
+}
+
 //Bold
 
+.whiteColor16Bold {
+  color: var(--whiteColor);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.whiteColor18Bold {
+  color: var(--whiteColor);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.blackColor14Bold {
+  color: var(--blackColor);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.blackColor16Bold {
+  color: var(--blackColor);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.blackColor18Bold {
+  color: var(--blackColor);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.blackColor22Bold {
+  color: var(--blackColor);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.primaryColor18Bold {
+  color: var(--primaryColor);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.grayColor18Bold {
+  color: var(--grayColor);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
 //Semibold
+
+.whiteColor14SemiBold {
+  color: var(--whiteColor);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.whiteColor36SemiBold {
+  color: var(--whiteColor);
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.blackColor14SemiBold {
+  color: var(--blackColor);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.blackColor16SemiBold {
+  color: var(--blackColor);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.blackColor18SemiBold {
+  color: var(--blackColor);
+  font-size: 18px;
+  font-weight: 600;
+}
 

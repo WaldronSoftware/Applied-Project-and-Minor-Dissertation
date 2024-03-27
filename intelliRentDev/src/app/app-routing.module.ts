@@ -27,6 +27,22 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./pages/auth/register/register.module').then( m => m.RegisterPageModule)
   },
+  {
+    path: 'verification',
+    loadChildren: () => import('./pages/auth/verification/verification.module').then( m => m.VerificationPageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'management',
+    loadChildren: () => import('./pages/management/management.module').then( m => m.ManagementPageModule)
+  },
 ];
 
 @NgModule({

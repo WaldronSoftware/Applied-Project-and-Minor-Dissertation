@@ -2,8 +2,8 @@
   <ion-content class="shadow">
     <div class="column" style="margin: 20px;">
       <!-- Login page with mobile verification -->
-      <ion-text>Welcome Back</ion-text>
-      <ion-text>Login to your account</ion-text>
+      <ion-text class="whiteColor36SemiBold">Welcome Back</ion-text>
+      <ion-text class="whiteColor14Regular" style="margin-top: -5px;">Login to your account</ion-text>
     </div>
 
     <div style="margin: 20px; margin-top: 130px;">
@@ -31,18 +31,25 @@
 
     <!-- Continue to registration -->
     <div
-    (click)="goTo('../register')"
+    (click)="goTo('register')"
     class="center margin20 gradientButton"
     style="margin-top: 50px;"
     >
       <ion-text class="whiteColor18Medium"> Continue </ion-text>
     </div>
 
-    <ion-text
-    class=""
-    style=""
-    
-    >Sending Mobile Verification Code</ion-text>
+    <ion-text class="whiteColor18Medium margin20 center" style="text-align: center; margin-top: 30px">Example Text for OTP</ion-text>
+
+    <div class="center rowAlignCenter margin20 facebookButton">
+      <ion-img src="../../../../assets/images/facebook.png" style="width: 30px; height: 30px; object-fit: contain"></ion-img>
+      <ion-text class="whiteColor14Medium" style="margin-left: 20px;">Facebook Login</ion-text>
+    </div>
+
+
+    <div class="center rowAlignCenter margin20" style="background-color: var(--whiteColor); border-radius: 20px; padding: 10px;">
+      <ion-img src="../../../../assets/images/google.png" style="width: 30px; height: 30px; object-fit: contain"></ion-img>
+      <ion-text class="blackColor14Medium" style="margin-left: 20px">Google Login</ion-text>
+    </div>
 
   </ion-content>
 </ion-content>

@@ -1,0 +1,19 @@
+ion-content::part(background) {
+    background: url("../../../../assets/images/bg.png") no-repeat center center /
+      cover;
+  }
+  
+  .shadow::part(background) {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0.1, 0, 0.7),
+      var(--blackColor)
+    );
+  }
+  
+  .facebookButton {
+    margin-top: 60px;
+    background-color: #3b5998;
+    border-radius: 20px;
+    padding: 10px;
+  }

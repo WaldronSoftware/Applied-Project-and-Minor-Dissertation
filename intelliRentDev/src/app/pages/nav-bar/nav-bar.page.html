@@ -1,13 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>nav-bar</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-tabs>
+  <ion-tab-bar slot="bottom" mode="ios">
+    <ion-tab-button tab="home">
+      <ion-icon name="home" style="font-size: 22px"></ion-icon>
+    </ion-tab-button>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">nav-bar</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+    <ion-tab-button tab="chat">
+      <ion-icon name="chatbubbles" style="font-size: 22px"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="management">
+      <ion-icon name="heart" style="font-size: 22px"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings">
+      <ion-icon name="settings" style="font-size: 22px"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
