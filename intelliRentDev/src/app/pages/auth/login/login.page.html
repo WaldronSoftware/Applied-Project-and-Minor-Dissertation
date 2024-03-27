@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true">
   <ion-content class="shadow">
     <div class="column" style="margin: 20px;">
-
+      <!-- Login page with mobile verification -->
       <ion-text>Welcome Back</ion-text>
       <ion-text>Login to your account</ion-text>
     </div>
@@ -16,7 +16,7 @@
             [enablePlaceholder]="true"
             [searchCountryFlag]="true"
             customPlaceholder="Mobile Number"
-            [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+            [searchCountryField]="[searchCountryField.Iso2, searchCountryField.Name]"
             [selectFirstCountry]="false"
             [selectedCountryISO]="CountryISO.Ireland"
             [maxLength]="15"
@@ -28,6 +28,21 @@
           </div>
         </form>
     </div>
+
+    <!-- Continue to registration -->
+    <div
+    (click)="goTo('../register')"
+    class="center margin20 gradientButton"
+    style="margin-top: 50px;"
+    >
+      <ion-text class="whiteColor18Medium"> Continue </ion-text>
+    </div>
+
+    <ion-text
+    class=""
+    style=""
+    
+    >Sending Mobile Verification Code</ion-text>
 
   </ion-content>
 </ion-content>

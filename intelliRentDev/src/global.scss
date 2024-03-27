@@ -27,13 +27,56 @@
 @import "./theme/styles.scss";
 @import "./theme/fonts.scss";
 
-//Division
+
+
+//Divisions
 .center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.row
+{
+  display: flex;
+  flex-direction: row;
+}
+
+.column
+{
+  display: flex;
+  flex-direction: row;
+}
+
+.button
+{
+  background-color: var(--primaryColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.horizontalScroll
+{
+  overflow-x: scroll;
+  white-space: nowrap;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.ellipseText
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+// Gradients
 .gradientWrapper {
     position: absolute;
     left: 0;
@@ -47,11 +90,40 @@
     );
   }
 
+  .gradientButton
+  {
+    border-radius: 20px;
+    padding: 12px;
+    background: linear-gradient(
+      to right,
+      rgba(6, 8, 48, 0.5),
+      rgb(106, 120, 241)
+    );
+  }
 
-  //Margin sizes
-  .margin20 {
+
+  //Margin 
+  .margin20 
+  {
     margin: 20px;
   }
+
+  .marginBottom10
+  {
+    margin-bottom: 10px;
+  }
+
+  .marginTop10
+  {
+    margin-top: 10px;
+  }
+
+  .marginLeft15
+  {
+    margin-left: 15px;
+  }
+  
+
   
 
 /* Importing Bootstrap SCSS file. */

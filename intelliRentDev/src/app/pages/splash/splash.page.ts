@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,17 +6,24 @@ import { Router } from '@angular/router';
   templateUrl: './splash.page.html',
   styleUrls: ['./splash.page.scss'],
 })
-export class SplashPage implements OnInit {
+export class SplashPage implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  private timeoutRef: any;
+
   ngAfterViewInit() {
-    setTimeout(() => {
-      this.router.navigateByUrl('/auth/login')
+    this.timeoutRef = setTimeout(() => {
+      this.router.navigateByUrl('/login')
     }, 2000);
+  }
+
+  ngOnDestroy()
+  {
+    clearTimeout(this.timeoutRef);
   }
 
 }

@@ -20,11 +20,18 @@ export class LoginPage implements OnInit {
     phone: new FormControl(undefined, [Validators.required])
   });
 
-  
+  changePreferredCountries() {
+    this.preferredCountries = [CountryISO.Ireland, CountryISO.UnitedKingdom];
+  }
 
-  constructor() { }
+  constructor(public platform: Platform, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goTo(screen: any)
+  {
+    this.router.navigateByUrl(screen);
   }
 
 }
