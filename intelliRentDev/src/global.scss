@@ -27,7 +27,14 @@
 @import "./theme/styles.scss";
 @import "./theme/fonts.scss";
 
+ion-content
+{
+  --background: var(--whiteColor)
+}
 
+ion-content::part(scroll)::-webkit-scrollbar {
+  display: none;
+}
 
 //Divisions
 .center {
@@ -122,7 +129,91 @@
   {
     margin-left: 15px;
   }
+
+  .exitWrapper {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
   
+  .exitText {
+    background-color: #333333;
+    padding: 10px 15px;
+    border-radius: 20px;
+  }
+  
+  .rowAlignCenter {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .columnAlignCenter {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  //Mobile Input
+
+  ngx-intl-tel-input input:focus {
+    outline: none !important;
+    border-color: var(--primaryColor);
+    border-width: 1.5px;
+  }
+
+  ngx-intl-tel-input input {
+    height: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
+    border-radius: 20px;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.75);
+    caret-color: var(--primaryColor);
+  }
+
+  ngx-intl-tel-input input::placeholder {
+    color: var(--whiteColor);
+    font-size: 14px;
+  }
+
+  .iti .search-container input {
+    color: var(--whiteColor);
+    font-size: 14px;
+    height: 45px;
+    border-color: transparent;
+    border-radius: 0;
+  }
+
+  .iti__flag-container.open + input {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  
+  .iti .iti__country-list {
+    box-shadow: none;
+    font-size: 14px;
+    width: 347px;
+    height: 350px;
+  }
+  
+  .iti {
+    display: block !important;
+    width: 100%;
+    color: var(--whiteColor);
+    font-size: 14px;
+  }
+  
+  .iti .dropdown-menu.country-dropdown {
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    overflow: hidden;
+    margin-top: 2px;
+  }
 
   
 
