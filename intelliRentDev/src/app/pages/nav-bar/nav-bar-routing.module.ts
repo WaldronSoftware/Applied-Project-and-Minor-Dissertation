@@ -13,12 +13,16 @@ const routes: Routes = [
         loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
       },
       {
+        path: 'management',
+        loadChildren: () => import('../management/management.module').then(m => m.ManagementPageModule)
+      },
+      {
         path: 'chat',
         loadChildren: () => import('../chat/chat.module').then(m => m.ChatPageModule)
       },
       {
-        path: 'management',
-        loadChildren: () => import('../management/management.module').then(m => m.ManagementPageModule)
+        path: 'favourite',
+        loadChildren: () => import('../favourite/favourite.module').then(m => m.FavouritePageModule)
       },
       {
         path: 'settings',

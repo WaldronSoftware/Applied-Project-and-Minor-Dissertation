@@ -1,0 +1,53 @@
+<ion-header [translucent]="false" mode="md" class="ion-no-border">
+  <ion-toolbar color="whiteColor" style="box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1)">
+    <ion-text class="primaryColor18Bold center">Favourites</ion-text>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="favouriteData.length>0" lines="none" style="padding: 20px 0">
+    <ion-item-sliding *ngFor="let item of favouriteData; let i = index" #slidingBooking class="ion-no-padding">
+      <ion-item lines="none" color="whiteColor">
+        <div class="propertyWrapper">
+          <ion-img [src]="item.propertyImage" style="height: 200px; object-fit: cover">
+          </ion-img>
+          <div style="padding: 10px">
+            <div class="rowAlignCenter" style="justify-content: space-between">
+              <div style="flex: 1; display: flex; flex-direction: column">
+                <ion-text class="blackColor14SemiBold ellipseText" style="-webkit-line-clamp: 1">
+                  {{item.propertyName}}
+                </ion-text>
+                <ion-text class="grayColor12Medium ellipseText" style="-webkit-line-clamp: 2; margin-top: 3px">
+                  {{item.propertyAddress}}
+                </ion-text>
+              </div>
+              <div class="columnAlignCenter" style="
+                  padding: 3px 12px;
+                  border: 1px solid rgba(128, 128, 128, 0.5);
+                  border-radius: 5px;
+                ">
+                <ion-text class="blackColor16SemiBold">
+                  €{{item.propertyAmount}}
+                </ion-text>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+      <ion-item-options class="ion-no-padding">
+        <ion-item-option side="end" color="redColor" (click)="onDelete(item.id, slidingBooking)"
+          style="margin-bottom: 20px; margin-top: 2px; width: 86px">
+          <ion-icon name="trash" slot="icon-only" color="whiteColor"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <div *ngIf="favouriteData.length===0" class="center" style="height: 100%; width: 100%; flex-direction: column">
+    <ion-icon name="heart-outline" color="grayColor" style="font-size: 45px; margin-bottom: 10px">
+    </ion-icon>
+    <ion-text class="grayColor18Bold"> No Favourites </ion-text>
+  </div>
+
+
+</ion-content>

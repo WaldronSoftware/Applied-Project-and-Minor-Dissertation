@@ -55,7 +55,7 @@ export class VerificationPage implements OnInit {
     setTimeout(() => {
       this.showLoadingDialog = false;
       this.popCtrl.dismiss();
-      this.router.navigateByUrl('home') //placeholder url
+      this.router.navigateByUrl('/nav-bar/home') //maybe change
     }, 2000);
   }
 
@@ -66,7 +66,7 @@ export class VerificationPage implements OnInit {
       setTimeout(() => {
         this.showLoadingDialog = false;
         this.popCtrl.dismiss();
-        this.router.navigateByUrl('home') //placeholder url change
+        this.router.navigateByUrl('/nav-bar/home') //maybe change
       }, 2000);
     }
   }

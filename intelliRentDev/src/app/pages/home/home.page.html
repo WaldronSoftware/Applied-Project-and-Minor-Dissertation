@@ -1,20 +1,115 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header [translucent]="false" mode="md" class="ion-no-border">
+  <ion-toolbar color="whiteColor" style="box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1)">
+    <div class="rowAlignCenter"
+      style="padding: 0 20px; justify-content: space-between; background-color: var(--whiteColor);">
+      <ion-text class="blackColor18Bold ellipseText" style="-webkit-line-clamp: 1">intelliRent</ion-text>
+      <div class="rowAlignCenter">
+        <ion-icon (click)="goTo('search')" name="search" color="primaryColor" style="font-size: 22px"></ion-icon>
+        <ion-icon (click)="goTo('notifications')" class="marginLeft15" name="notifications" color="primaryColor"
+          style="font-size: 22px"></ion-icon>
+      </div>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!--Nearby Properties top scroller-->
+  <div>
+    <ion-text class="blackColor18SemiBold margin20" style="margin-bottom: 10px">
+      Nearby Properties
+    </ion-text>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="horizontalScroll" style="padding: 10px; padding-top: 10px">
+      <div *ngFor="let item of nearByPropertyList;let i=index;"
+        style="display: inline-block; margin: 10px; position: relative">
+        <div (click)="goTo('property-detail')" class="nearbyPropertyWrapper">
+          <ion-img [src]="item.propertyImage" style="height: 110px; object-fit: cover">
+          </ion-img>
+          <div style="display: flex; flex-direction: column; padding: 10px">
+            <ion-text class="blackColor14SemiBold ellipseText" style="-webkit-column-break-after: 1">
+              {{item.propertyName}}
+            </ion-text>
+            <ion-text class="grayColor12Medium ellipseText" style="-webkit-column-break-after: 1; margin: 5px 0">
+              {{item.propertyAddress}}
+            </ion-text>
+            <ion-text class="blackColor16SemiBold">
+              €{{item.propertyAmount}}
+            </ion-text>
+          </div>
+        </div>
+        <!--Save property heart-->
+        <div class="center circle30">
+          <ion-icon (click)="infavorit=!nearByPropertyList[i].isFavourit;
+               nearByPropertyList[i].isFavourit=!nearByPropertyList[i].isFavourit;
+               isToastOpen=true
+               " [name]="item.isFavourit?'heart':'heart-outline'" [color]="item.isFavourit?'primaryColor': 'grayColor'"
+            style="font-size: 18px"></ion-icon>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div>
+    <ion-text class="blackColor18SemiBold margin20">
+      Featured Properties
+    </ion-text>
+    <div class="marginTop10">
+      <div
+        *ngFor="let item of featuredPropertyList;let i=index;"
+        class="featuredPropertyWrapper"
+        style="position: relative"
+      >
+        <div (click)="goTo('property-detail')" style="position: relative">
+          <ion-img
+            [src]="item.propertyImage"
+            style="height: 200px; object-fit: cover"
+          >
+          </ion-img>
+          <div style="padding: 10px">
+            <div class="rowAlignCenter" style="justify-content: space-between">
+              <div style="flex: 1; display: flex; flex-direction: column">
+                <ion-text
+                  class="blackColor14SemiBold ellipseText"
+                  style="-webkit-line-clamp: 1"
+                >
+                  {{item.propertyName}}
+                </ion-text>
+                <ion-text
+                  class="grayColor12Medium ellipseText"
+                  style="-webkit-line-clamp: 2; margin-top: 3px"
+                >
+                  {{item.propertyAddress}}
+                </ion-text>
+              </div>
+              <div
+                class="columnAlignCenter"
+                style="
+                  padding: 3px 12px;
+                  border: 1px solid rgba(128, 128, 128, 0.5);
+                  border-radius: 5px;
+                "
+              >
+                <ion-text class="blackColor16SemiBold">
+                  {{item.propertyAmount}}$
+                </ion-text>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="center circle30">
+          <ion-icon
+            (click)="infavorit=!featuredPropertyList[i].isFavourit;
+           this.featuredPropertyList[i].isFavourit = !this.featuredPropertyList[i].isFavourit;
+           isToastOpen=true
+           "
+            [name]="item.isFavourit?'heart':'heart-outline'"
+            [color]="item.isFavourit?'primaryColor': 'grayColor'"
+            style="font-size: 18px"
+          ></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </ion-content>

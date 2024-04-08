@@ -1,9 +1,9 @@
 <ion-content [fullscreen]="true">
   <ion-content class="shadow">
-    <div class="column" style="margin: 20px;">
+    <div class="column" style="margin: 20px;" [style.margin-top]="platform.is('android')?'30px':'60px'">
       <!-- Login page with mobile verification -->
-      <ion-text class="whiteColor36SemiBold">Welcome Back</ion-text>
-      <ion-text class="whiteColor14Regular" style="margin-top: -5px;">Login to your account</ion-text>
+      <ion-text class="whiteColor36SemiBold">Welcome Back!</ion-text>
+      
     </div>
 
     <div style="margin: 20px; margin-top: 130px;">
@@ -38,7 +38,7 @@
       <ion-text class="whiteColor18Medium"> Continue </ion-text>
     </div>
 
-    <ion-text class="whiteColor18Medium margin20 center" style="text-align: center; margin-top: 30px">Example Text for OTP</ion-text>
+   <!-- <ion-text class="whiteColor18Medium margin20 center" style="text-align: center; margin-top: 30px">Example Text for OTP</ion-text> -->
 
     <div class="center rowAlignCenter margin20 facebookButton">
       <ion-img src="../../../../assets/images/facebook.png" style="width: 30px; height: 30px; object-fit: contain"></ion-img>

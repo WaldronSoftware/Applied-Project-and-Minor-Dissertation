@@ -43,6 +43,18 @@ const routes: Routes = [
     path: 'management',
     loadChildren: () => import('./pages/management/management.module').then( m => m.ManagementPageModule)
   },
+  {
+    path: 'search',
+    loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+    path: 'notifications',
+    loadChildren: () => import('./pages/notifications/notifications.module').then( m => m.NotificationsPageModule)
+  },
+  {
+    path: 'favourite',
+    loadChildren: () => import('./pages/favourite/favourite.module').then( m => m.FavouritePageModule)
+  },
 ];
 
 @NgModule({
