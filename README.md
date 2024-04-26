@@ -17,3 +17,8 @@ Then run
 ```
 ionic serve
 ```
+
+You can change to mobile view by using:
+```
+CTRL + SHIFT + M
+```
