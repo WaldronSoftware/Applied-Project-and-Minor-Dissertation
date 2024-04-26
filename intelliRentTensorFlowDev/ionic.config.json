@@ -1,0 +1,7 @@
+{
+  "name": "intelliRentDev",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

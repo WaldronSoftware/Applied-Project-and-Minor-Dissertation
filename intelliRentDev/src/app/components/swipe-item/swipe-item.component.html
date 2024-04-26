@@ -1,0 +1,16 @@
+<div class="wrapper" #wrapper></div>
+<ion-item mode="ios" lines="none" color="whiteColor">
+  <div class="itemWrapper">
+    <div class="circle60">
+      <ion-icon name="notifications" color="whiteColor" style="font-size: 28px" />
+    </div>
+    <div style="flex-direction: column; display: flex; flex: 1; margin-left: 10px">
+      <ion-text class="blackColor16SemiBold ellipseText" style="-webkit-line-clamp: 1">
+        {{ noti.title }}
+      </ion-text>
+      <ion-text class="blackColor14Regular ellipseText" style="-webkit-line-clamp: 2; margin-top: 5px">
+        {{ noti.description }}
+      </ion-text>
+    </div>
+  </div>
+</ion-item>

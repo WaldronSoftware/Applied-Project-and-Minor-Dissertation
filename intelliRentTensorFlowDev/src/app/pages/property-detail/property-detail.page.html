@@ -1,0 +1,165 @@
+<ion-content [fullscreen]="true" [scrollEvents]="true" (ionScroll)="handleScroll($any($event))">
+  <div slot="fixed" class="header" [style.padding-top]="platform.is('ios')?'50px':'15px'"
+    [style.background]="(platform.is('ios')?scrollValue>=230: scrollValue>=260)?'var(--primaryColor)':'transparent'">
+    <ion-icon (click)="goBack()" name="arrow-back" color="whiteColor" style="font-size: 24px">
+    </ion-icon>
+
+    <div class="rowAlignCenter">
+      <ion-icon (click)="infavorite=!infavorite;isToastOpen=true" [name]="infavorite?'heart': 'heart-outline'"
+        color="whiteColor" style="font-size: 24px">
+      </ion-icon>
+      <ion-icon name="share-social" color="whiteColor" style="font-size: 24px; margin-left: 10px"></ion-icon>
+    </div>
+  </div>
+
+  <ion-img src="../../../assets/images/property/house1/exterior.jpg" class="topImage"
+    style="object-fit: cover; position: relative; overflow: hidden">
+  </ion-img>
+
+  <div class="topImage" style="background-color: var(--primaryColor); position: absolute; top: 0"
+    [style.opacity]="scrollValue<=20?0: (scrollValue/(platform.is('ios')?230:260))"></div>
+
+  <div>
+    <ion-text class="blackColor18Bold margin20" style="display: flex; margin-top: 15px">
+      Test House
+    </ion-text>
+    <div class="rowAlignCenter margin20" style="justify-content: space-between">
+      <div style="flex-direction: column; display: flex">
+        <ion-text class="grayColor14Medium ellipseText" style="-webkit-line-clamp: 2">
+          Test Street, Galway
+        </ion-text>
+        <ion-text class="blackColor14SemiBold" style="margin-top: 5px">
+          4000ft2
+        </ion-text>
+      </div>
+      <div class="columnAlignCenter" style="
+          padding: 3px 12px;
+          border: 1px solid rgba(128, 128, 128, 0.5);
+          border-radius: 5px;
+        ">
+        <ion-text class="blackColor16SemiBold"> €9999 </ion-text>
+      </div>
+    </div>
+
+    <div class="rowAlignCenter margin20" style="justify-content: space-between">
+      <div class="columnAlignCenter" style="flex: 1; margin: 0 3px">
+        <ion-text class="blackColor22Bold" style="margin-bottom: -3px">
+          2
+        </ion-text>
+        <ion-text class="blackColor14Regular ellipseText" style="-webkit-line-clamp: 1">
+          Bedrooms
+        </ion-text>
+      </div>
+      <div class="columnAlignCenter" style="flex: 1; margin: 0 3px">
+        <ion-text class="blackColor22Bold" style="margin-bottom: -3px">
+          3
+        </ion-text>
+        <ion-text class="blackColor14Regular ellipseText" style="-webkit-line-clamp: 1">
+          Bathrooms
+        </ion-text>
+      </div>
+      <div class="columnAlignCenter" style="flex: 1; margin: 0 3px">
+        <ion-text class="blackColor22Bold" style="margin-bottom: -3px">
+          4
+        </ion-text>
+        <ion-text class="blackColor14Regular ellipseText" style="-webkit-line-clamp: 1">
+          Utility Room
+        </ion-text>
+      </div>
+      <div class="columnAlignCenter" style="flex: 1; margin: 0 3px">
+        <ion-text class="blackColor22Bold" style="margin-bottom: -3px">
+          5
+        </ion-text>
+        <ion-text class="blackColor14Regular ellipseText" style="-webkit-line-clamp: 1">
+          Parking Spaces
+        </ion-text>
+      </div>
+    </div>
+
+    <div class="margin20">
+      <ion-text class="blackColor18Bold"> Description </ion-text>
+      <div style="margin-top: 5px">
+        <ion-text class="blackColor12Regular">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies mi
+          id faucibus odio lobortis vitae, ante malesuada mauris. Nulla quis
+          orci, libero turpis morbi diam. Non placerat est consectetur hendrerit
+          sem fringilla leo. Urna posuere aliquet justo, vitae at pharetra.
+          Euismod sagittis malesuada mattis commodo faucibus purus convallis.
+        </ion-text>
+      </div>
+    </div>
+
+    <div>
+      <ion-text class="blackColor18Bold margin20" style="margin-bottom: 0">
+        Photos
+      </ion-text>
+      <div class="horizontalScroll" style="padding: 10px; padding-top: 0">
+        <div *ngFor="let item of propertyPhotosList;let i=index;"
+          style="display: inline-block; margin: 10px; position: relative">
+          <ion-img (click)="goToImageFullView(item.photo)" [src]="item.photo" class="propertyPhotos">
+          </ion-img>
+        </div>
+      </div>
+    </div>
+
+    <div class="margin20">
+      <ion-text class="blackColor18Bold"> Location </ion-text>
+      <div class="map" #map></div>
+    </div>
+
+    <div class="margin20">
+      <ion-text class="blackColor18Bold"> Amenities </ion-text>
+      <div class="rowAlignCenter" style="margin-top: 10px" *ngFor="let item of amenitiesList">
+        <div class="center circle16">
+          <ion-icon name="checkmark-sharp" color="whiteColor" style="font-size: 12px">
+          </ion-icon>
+        </div>
+        <ion-text class="blackColor14Regular" style="margin-left: 5px">
+          {{item.amenities}}
+        </ion-text>
+      </div>
+    </div>
+
+    <div class="margin20" *ngFor="let item of nearestPlacesList;let i=index;">
+      <div (click)="nearestPlacesList[i].isExpandable=!nearestPlacesList[i].isExpandable" class="rowAlignCenter"
+        style="justify-content: space-between">
+        <ion-text class="blackColor14Bold">
+          {{item.place}}({{item.more.length}})
+        </ion-text>
+        <ion-icon [name]="item.isExpandable?'chevron-up-sharp' :'chevron-down-sharp'" color="primaryColor"
+          style="font-size: 18px"></ion-icon>
+      </div>
+      <div *ngIf="item.isExpandable">
+        <div class="rowAlignCenter marginTop10" style="justify-content: space-between" *ngFor="let place of item.more">
+          <ion-text class="grayColor14Regular"> {{place.name}} </ion-text>
+          <ion-text class="grayColor14Regular"> {{place.time}} </ion-text>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ion-toast mode="ios" [isOpen]="isToastOpen" [message]="infavorite?'Added to Favourites':'Removed from Favourites'"
+    class="whiteColor15Medium" [duration]="1000" (didDismiss)="isToastOpen=false"></ion-toast>
+</ion-content>
+
+<ion-footer>
+  <div class="rowAlignCenter footer" [style.padding-bottom]="platform.is('ios')? '25px':'10px'">
+    <div class="rowAlignCenter">
+      <ion-img src="../../../assets/images/users/user1.jpg" class="ownerImage">
+      </ion-img>
+      <div style="display: flex; flex-direction: column; margin: 0 10px">
+        <ion-text class="blackColor16Bold"> John Smith </ion-text>
+        <ion-text class="grayColor14Medium" style="margin-top: 3px">
+          Landlord
+        </ion-text>
+      </div>
+    </div>
+    <div (click)="goTo('message')" style="
+        border-radius: 5px;
+        background-color: var(--primaryColor);
+        padding: 5px 10px;
+      ">
+      <ion-text class="whiteColor14SemiBold"> Contact </ion-text>
+    </div>
+  </div>
+</ion-footer>

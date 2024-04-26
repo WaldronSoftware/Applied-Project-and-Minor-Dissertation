@@ -1,0 +1,46 @@
+.txtField {
+    --placeholder-font-weight: 500;
+    --placeholder-color: var(--grayColor);
+    --placeholder-opacity: 1;
+    min-height: 50px;
+    --border-color: var(--grayColor);
+    --border-radius: 5px;
+    --border-style: solid;
+    --border-width: 1px;
+  }
+  
+  .divider {
+    height: 1px;
+    background-color: #cfc6c6;
+    margin: 15px 0;
+  }
+  
+  .circle20 {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--primaryColor);
+  }
+  
+  .circle14 {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: var(--primaryColor);
+  }
+  
+  .circle100 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: 1.2px solid var(--primaryColor);
+  }
+  
+  .addListingButton {
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primaryColor);
+  }
+  

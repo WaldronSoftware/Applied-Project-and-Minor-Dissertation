@@ -1,0 +1,55 @@
+<ion-content [fullscreen]="true">
+  <ion-content class="shadow">
+    <div class="column" style="margin: 20px;" [style.margin-top]="platform.is('android')?'30px':'60px'">
+      <!-- Login page with mobile verification -->
+      <ion-text class="whiteColor36SemiBold">Welcome Back!</ion-text>
+      
+    </div>
+
+    <div style="margin: 20px; margin-top: 130px;">
+      	<form #f="ngForm" [formGroup]="phoneForm">
+          <div>
+            <ngx-intl-tel-input 
+            [cssClass]="'custom'"
+            [preferredCountries]="preferredCountries"
+            [enableAutoCountrySelect]="true"
+            [enablePlaceholder]="true"
+            [searchCountryFlag]="true"
+            customPlaceholder="Mobile Number"
+            [searchCountryField]="[searchCountryField.Iso2, searchCountryField.Name]"
+            [selectFirstCountry]="false"
+            [selectedCountryISO]="CountryISO.Ireland"
+            [maxLength]="15"
+            [phoneValidation]="true"
+            [separateDialCode]="true"
+            name="phone"
+            formControlName="phone"
+            ></ngx-intl-tel-input>
+          </div>
+        </form>
+    </div>
+
+    <!-- Continue to registration -->
+    <div
+    (click)="goTo('register')"
+    class="center margin20 gradientButton"
+    style="margin-top: 50px;"
+    >
+      <ion-text class="whiteColor18Medium"> Continue </ion-text>
+    </div>
+
+   <!-- <ion-text class="whiteColor18Medium margin20 center" style="text-align: center; margin-top: 30px">Example Text for OTP</ion-text> -->
+
+    <div class="center rowAlignCenter margin20 facebookButton">
+      <ion-img src="../../../../assets/images/facebook.png" style="width: 30px; height: 30px; object-fit: contain"></ion-img>
+      <ion-text class="whiteColor14Medium" style="margin-left: 20px;">Facebook Login</ion-text>
+    </div>
+
+
+    <div class="center rowAlignCenter margin20" style="background-color: var(--whiteColor); border-radius: 20px; padding: 10px;">
+      <ion-img src="../../../../assets/images/google.png" style="width: 30px; height: 30px; object-fit: contain"></ion-img>
+      <ion-text class="blackColor14Medium" style="margin-left: 20px">Google Login</ion-text>
+    </div>
+
+  </ion-content>
+</ion-content>

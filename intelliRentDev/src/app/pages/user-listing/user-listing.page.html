@@ -1,0 +1,77 @@
+<ion-header [translucent]="false" mode="md" class="ion-no-border">
+  <ion-toolbar color="whiteColor" style="box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1)">
+    <div class="rowAlignCenter center" style="padding: 0 20px; background-color: var(--whiteColor)">
+      <ion-text class="blackColor18Bold" style="text-align: center; max-width: 80%">
+        My Listing
+      </ion-text>
+      <ion-icon (click)="goBack()" name="arrow-back" color="blackColor"
+        style="font-size: 24px; position: absolute; left: 20px">
+      </ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="userListingPropertyList.length>0">
+    <div *ngFor="let item of userListingPropertyList">
+      <div class="propertyWrapper">
+        <ion-img [src]="item.propertyImage" style="height: 220px; object-fit: cover">
+        </ion-img>
+        <div style="padding: 10px">
+          <div class="rowAlignCenter" style="justify-content: space-between">
+            <div style="flex: 1; display: flex; flex-direction: column">
+              <ion-text class="blackColor14SemiBold ellipseText" style="-webkit-line-clamp: 1">
+                {{item.propertyName}}
+              </ion-text>
+              <ion-text class="grayColor12Medium ellipseText" style="-webkit-line-clamp: 2; margin-top: 10px">
+                {{item.propertyAddress}}
+              </ion-text>
+            </div>
+            <div class="columnAlignCenter" style="
+                padding: 3px 12px;
+                border: 1px solid rgba(128, 128, 128, 0.5);
+                border-radius: 5px;
+              ">
+              <ion-text class="blackColor16SemiBold">
+                €{{item.propertyAmount}}
+              </ion-text>
+            </div>
+          </div>
+        </div>
+        <div (click)="currentPropertyId=item.id; showDialog=true" class="button" style="margin: 0; border-radius: 0">
+          <ion-text class="whiteColor14Medium"> Delete </ion-text>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="userListingPropertyList.length===0" class="center column"
+    style="height: 100%; width: 100%; padding-bottom: 60px">
+    <ion-icon name="list" color="grayColor" style="font-size: 45px; margin-bottom: 10px">
+    </ion-icon>
+    <ion-text class="grayColor18Bold"> No listing found </ion-text>
+  </div>
+
+  <ion-popover mode="md" [isOpen]="showDialog" style="--width: 85%; --min-width: 85%" (didDismiss)="showDialog = false">
+    <ng-template>
+      <div style="background-color: var(--whiteColor)">
+        <ion-text class="blackColor16Bold dialogHeader">
+          Delete this listing?
+        </ion-text>
+        <div class="cancelAndDeleteWrapper">
+          <div style="flex: 1">
+            <ion-text (click)="showDialog = false;currentPropertyId=''" class="blackColor14Medium center cancelButton"
+              style="flex: 1">
+              Cancel
+            </ion-text>
+          </div>
+          <div style="flex: 1">
+            <ion-text (click)="deleteProperty()" class="whiteColor14Medium center deleteButton" style="flex: 1">
+              Delete
+            </ion-text>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ion-popover>
+</ion-content>

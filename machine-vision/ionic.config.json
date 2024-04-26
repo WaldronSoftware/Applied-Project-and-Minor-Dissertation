@@ -1,7 +1,0 @@
-{
-  "name": "machine-vision",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}

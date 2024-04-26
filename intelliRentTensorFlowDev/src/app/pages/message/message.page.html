@@ -1,0 +1,78 @@
+<ion-header [translucent]="false" mode="md" class="ion-no-border">
+  <ion-toolbar color="whiteColor" style="box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1)">
+    <div class="rowAlignCenter" style="
+        padding: 0 20px;
+        justify-content: space-between;
+        background-color: var(--whiteColor);
+      ">
+      <ion-icon (click)="goBack()" name="arrow-back" color="blackColor" style="font-size: 24px">
+      </ion-icon>
+      <ion-text class="blackColor18Bold ellipseText" style="
+          flex: 1;
+          -webkit-line-clamp: 1;
+          text-align: center;
+          margin: 0 10px;
+        ">
+        Test Name
+      </ion-text>
+      <ion-icon id="open-modal" name="chevron-down-sharp" color="blackColor" style="font-size: 20px">
+      </ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="center">
+  <div style="margin: 0 10px">
+    <div *ngFor="let item of messagesList" style="display: flex; flex-direction: column; margin: 10px"
+      [style.align-items]="item.isSender?'flex-end':'flex-start'">
+      <div style="padding: 10px; border-radius: 5px;max-width: 75%;"
+        [style.background]="item.isSender?'var(--primaryColor)':'rgba(128,128,128,0.6)'"
+        [style.border-bottom-right-radius]="item.isSender?'0px':'5px'"
+        [style.border-bottom-left-radius]="!item.isSender?'0px':'5px'">
+        <ion-text class="whiteColor14Regular"> {{item.message}} </ion-text>
+      </div>
+      <div class="rowAlignCenter" style="margin-top: 3px">
+        <ion-icon *ngIf="item.isSender" [name]="item.isSeen?'checkmark-done-sharp':'checkmark-sharp'" color="blueColor"
+          style="font-size: 15px; margin-right: 2px"></ion-icon>
+        <ion-text class="grayColor12Regular"> {{item.time}} </ion-text>
+      </div>
+    </div>
+  </div>
+
+  <ion-modal mode="md" [initialBreakpoint]="1" [breakpoints]="[0, 1]" style="--height: auto" trigger="open-modal"
+    handle="false">
+    <ng-template>
+      <div class="sheet" [style.padding-bottom]="platform.is('android')?'20px':'30px'">
+        <ion-img src="../../../assets/images/property/house1/exterior.jpg" class="propertyImg">
+        </ion-img>
+        <div class="propertyDetail">
+          <div style="display: flex; flex-direction: column">
+            <ion-text class="blackColor18Bold"> Test House </ion-text>
+            <ion-text class="grayColor14Medium" style="margin-top: 3px">
+              Test Street, Test
+            </ion-text>
+          </div>
+          <div style="display: flex; flex-direction: column">
+            <ion-text class="blackColor18Bold"> €1234 </ion-text>
+            <div class="viewMoreButton">
+              <ion-text class="whiteColor14Medium"> View more </ion-text>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ion-modal>
+</ion-content>
+
+<ion-footer mode="md">
+  <form>
+    <div class="footer" [style.padding-bottom]="platform.is('ios')?'20px':'10px'">
+      <ion-textarea #textArea [(ngModel)]="newMsg" [ngModelOptions]="{standalone: true}" mode="ios"
+        placeholder="Type a message" class="whiteColor14Regular searchField" rows="1"></ion-textarea>
+
+      <div (click)="addMessage()" class="center circle40">
+        <ion-icon name="send" color="primaryColor" style="font-size: 20px"></ion-icon>
+      </div>
+    </div>
+  </form>
+</ion-footer>

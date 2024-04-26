@@ -1,0 +1,44 @@
+.propertyWrapper {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin:20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  ion-popover::part(content) {
+    border-radius: 10px;
+  }
+  
+  .cancelButton {
+    border: 1px solid var(--blackColor);
+    border-radius: 10px;
+    padding: 5px;
+    background-color: var(--whiteColor);
+    margin: 10px;
+  }
+  
+  .deleteButton {
+    border: 1px solid var(--primrayColor);
+    border-radius: 10px;
+    padding: 5px;
+    background-color: var(--primaryColor);
+    margin: 10px;
+  }
+  
+  .cancelAndDeleteWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .dialogHeader {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  

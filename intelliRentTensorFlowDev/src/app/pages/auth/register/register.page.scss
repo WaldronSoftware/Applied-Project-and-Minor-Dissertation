@@ -1,0 +1,27 @@
+ion-content::part(background) {
+    background: url("../../../../assets/images/bg.png") no-repeat center center /
+      cover;
+  }
+  
+  .shadow::part(background) {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0.1, 0, 0.7),
+      var(--blackColor)
+    );
+  }
+  
+  .txtField {
+    --placeholder-font-weight: 500;
+    --placeholder-color: var(--whiteColor);
+    --placeholder-opacity: 0.7;
+    min-height: 50px;
+    --border-color: transparent;
+    --border-radius: 15px;
+    --border-style: solid;
+    --border-width: 1px;
+    background-color: rgba(128, 128, 128, 0.8);
+    border-radius: 15px;
+  
+  }
+  
